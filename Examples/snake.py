@@ -1,4 +1,4 @@
-import ConsoleEngine as CE
+import ConsoleEngine as CE #Need to be in same direcory
 import random as r
 
 screenWidth = 120
