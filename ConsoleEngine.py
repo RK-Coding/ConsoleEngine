@@ -4,7 +4,7 @@ import keyboard
 import winsound
 
 title = 'ConsoleGame'
-b_color = 'black'
+b_color = '0'
 height = 0
 width = 0
 board = []
@@ -150,36 +150,22 @@ class Sprite:
             temp += 1
 
     def right(self, unit, frame = True):
-        global width
-
-        inFrame = True
-
-        for i in range(len(self.positions)):
-            if (self.positions[i][1] == width - 1):
-                inFrame = False
-
-        if (inFrame):
-            self.x += unit
+        self.x += unit
 
     def left(self, unit):
-        if (self.x != 0):
-            self.x -= unit
+        self.x -= unit
 
     def down(self, unit):
-        global height
-
-        if (self.y != height - 1):
-            self.y += unit
+        self.y += unit
 
     def up(self, unit):
-        if (self.y != 0):
-            self.y -= unit
+        self.y -= unit
 
     def check_collision(self, otherSprite):
         collison = False
 
         for i in range(len(otherSprite.positions)):
-            if otherSprite.positions[i] in self.positions:
+            if (otherSprite.positions[i] in self.positions):
                 collison = True
 
         return collison
